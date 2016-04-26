@@ -1,0 +1,5 @@
+projectKey=EmployeeDirectory
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/EmployeeDirectory
+ceTaskId=AVRRZTeBzrq0U1L9WfUw
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVRRZTeBzrq0U1L9WfUw

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites tests='8' failures='3'>
+  <testsuite name='EmployeeDirectoryTests' tests='8' failures='3'>
+    <testcase classname='EmployeeDirectoryTests' name='testDetailView' time='0.174'/>
+    <testcase classname='EmployeeDirectoryTests' name='testExample'>
+      <failure message='failed - No implementation for &quot;-[EmployeeDirectoryTests testExample]&quot;'>EmployeeDirectoryTests/EmployeeDirectoryTests.m:110</failure>
+    </testcase>
+    <testcase classname='EmployeeDirectoryTests' name='testLoginDetails' time='1.853'/>
+    <testcase classname='EmployeeDirectoryTests' name='testReports'>
+      <failure message='((false) is true) failed - Not all employees report to CEO'>EmployeeDirectoryTests/EmployeeDirectoryTests.m:176</failure>
+    </testcase>
+    <testcase classname='EmployeeDirectoryTests' name='testSearchEmployee' time='0.075'/>
+    <testcase classname='EmployeeDirectoryTests' name='testViewControllerConformsToTableViewDataSourceProtocol' time='0.006'/>
+    <testcase classname='EmployeeDirectoryTests' name='testViewControllerConformsToTableViewDelegateProtocol' time='0.004'/>
+    <testcase classname='EmployeeDirectoryTests' name='testViewControllerIsComposedOfTableView'>
+      <failure message='failed: caught &quot;NSInvalidArgumentException&quot;, &quot;+entityForName: nil is not a legal NSManagedObjectContext parameter searching for entity name &apos;Employee&apos;&quot;'>EmployeeDirectoryTests/EmployeeDirectoryTests.m:115</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
