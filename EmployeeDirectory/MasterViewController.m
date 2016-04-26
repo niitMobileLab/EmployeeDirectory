@@ -174,7 +174,7 @@
     return YES;
 }
 
-- (void)searchForText:(NSString *)searchText
+- (bool)searchForText:(NSString *)searchText
 {
     
     NSLog(@"Search for text %@", searchText);
@@ -191,6 +191,10 @@
         self.filteredEmployees = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
         NSLog(@"search results: %lu", (unsigned long)[self.filteredEmployees count]);
     }
+    if([self.filteredEmployees count]>0)
+        return YES;
+    else
+        return NO;
 }
 
 

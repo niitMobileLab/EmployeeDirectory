@@ -11,6 +11,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <Parse/Parse.h>
 
+#import <Google/Analytics.h>
 
 @implementation AppDelegate
 

@@ -4,6 +4,10 @@
 # use_frameworks!
 
 target 'EmployeeDirectory' do
+    pod 'Google/Analytics'
+    
+    pod 'Fabric'
+    pod 'Crashlytics'
 
 end
 

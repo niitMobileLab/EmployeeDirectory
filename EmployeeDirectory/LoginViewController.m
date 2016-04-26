@@ -43,32 +43,6 @@
 }
 
 
-- (void) addEmployee:(NSNumber *) id firstName:(NSString *)firstName
-lastName:(NSString *)lastName
-title:(NSString *)title
-managerId:(NSNumber *)managerId
-officePhone:(NSString *)officePhone
-cellPhone:(NSString *)cellPhone
-email:(NSString *)email
-picture:(NSString *)picture
-{
-    Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];
-    
-    employee.id = id;
-    employee.firstName = firstName;
-    employee.lastName = lastName;
-    employee.title = title;
-    employee.managerId = managerId;
-    employee.officePhone = officePhone;
-    employee.cellPhone = cellPhone;
-    employee.email = email;
-    employee.picture = picture;
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Error: %@", [error localizedDescription]);
-    }
-    
-}
 
 
 - (void)saveContext
@@ -158,15 +132,17 @@ picture:(NSString *)picture
     return _persistentStoreCoordinator;
 }
 
--(IBAction)signInPressed:(id)sender
+-(bool)isLoginSuccessful:(UITextField*)UserName password:(UITextField*)password
 {
+    __block bool isLoginSuccessful = NO;
     Utility *util = [Utility sharedManager];
     
     //Validate the UserName and Password field
-    if(([userNameField.text length] > 0) && ([pwdField.text length] > 0))
+    if(([UserName.text length] > 0) && ([password.text length] > 0))
     {
         [util showLoadingScreen];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Username =%@", userNameField.text];
+        
         
         PFQuery *query = [PFQuery queryWithClassName:@"Users" predicate:predicate];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -182,27 +158,49 @@ picture:(NSString *)picture
                 if([s isEqualToString:pwdField.text])
                 {
                     [util removeLoadingScreen];
+                    PFObject *obj=[objects objectAtIndex:0];
+                    PFFile *file1 = [obj objectForKey:@"EmployeesJson"];
+                    
+                    [file1 saveInBackground];
+                    
+                    NSData *data = [file1 getData];
+                    NSDictionary *jsonObject=[NSJSONSerialization
+                                              JSONObjectWithData:data
+                                              options:NSJSONReadingMutableLeaves
+                                              error:nil];
+                    [self setUpData:jsonObject];
+                    isLoginSuccessful = YES;
                     [self performSegueWithIdentifier:@"Employees" sender:self];
                 }
                 else{
                     [util removeLoadingScreen];
-
+                    isLoginSuccessful = NO;
                     [self showAlert:@"Enter Valid Credential"];
                 }
-
+                
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
                 [util removeLoadingScreen];
-
+                isLoginSuccessful = NO;
                 [self showAlert:@"Enter Valid Credential"];
-
+                
             }
         }];
     }
     else{
         [self showAlert:nil];
     }
+    
+    return isLoginSuccessful;
+    
+
+    
+}
+
+-(IBAction)signInPressed:(id)sender
+{
+    [self isLoginSuccessful:userNameField password:pwdField];
 }
 
 -(void)showAlert:(NSString*)msg
@@ -246,6 +244,31 @@ picture:(NSString *)picture
 
 #pragma mark - Navigation
 
+-(void)setUpData:(NSDictionary *)employeeData
+{
+    NSDictionary * employeeDict = [employeeData objectForKey:@"employees"];
+
+    for (NSDictionary *emp in employeeDict )
+    {
+        Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:self.managedObjectContext];
+        
+        employee.id = [NSNumber numberWithInt:[[emp valueForKey:@"id"] intValue]];
+        employee.firstName = emp[@"firstName"];
+        employee.lastName = emp[@"lastName"];
+        employee.title = emp[@"title"];
+        employee.managerId = [NSNumber numberWithInt:[[emp valueForKey:@"managerId"] intValue]];
+        employee.officePhone = emp[@"officePhone"];
+        employee.cellPhone = emp[@"cellPhone"];
+        employee.email = emp[@"email"];
+        employee.picture = emp[@"picture"];
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Error: %@", [error localizedDescription]);
+        }
+    
+    }
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -253,26 +276,6 @@ picture:(NSString *)picture
     MasterViewController *controller = (MasterViewController *)segue.destinationViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-    {
-        NSLog(@"This is the first launch");
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        // Adding sample data
-        [self addEmployee:@1 firstName:@"James" lastName:@"King" title:@"CEO" managerId:@0 officePhone:@"617-219-2001" cellPhone:@"781-219-9991" email:@"jking@fakemail.com" picture:@"james_king.jpg" ];
-        [self addEmployee:@2 firstName:@"Julie" lastName:@"Taylor" title:@"VP of Marketing" managerId:@1 officePhone:@"617-219-2001" cellPhone:@"781-219-9992" email:@"julie@fakemail.com" picture:@"julie_taylor.jpg" ];
-        [self addEmployee:@3 firstName:@"Eugene" lastName:@"Lee" title:@"CFO" managerId:@1 officePhone:@"617-219-2003" cellPhone:@"781-219-9993" email:@"eugene@fakemail.com" picture:@"eugene_lee.jpg" ];
-        [self addEmployee:@4 firstName:@"John" lastName:@"Williams" title:@"VP of Engineering" managerId:@1 officePhone:@"617-219-2004" cellPhone:@"781-219-9994" email:@"john@fakemail.com" picture:@"john_williams.jpg" ];
-        [self addEmployee:@5 firstName:@"Ray" lastName:@"Moore" title:@"VP of Sales" managerId:@1 officePhone:@"617-219-2005" cellPhone:@"781-219-9995" email:@"ray@fakemail.com" picture:@"ray_moore.jpg" ];
-        [self addEmployee:@6 firstName:@"Paul" lastName:@"Jones" title:@"QA Manager" managerId:@4 officePhone:@"617-219-2006" cellPhone:@"781-219-9996" email:@"paul@fakemail.com" picture:@"paul_jones.jpg" ];
-        [self addEmployee:@7 firstName:@"Paula" lastName:@"Gates" title:@"Software Architect" managerId:@4 officePhone:@"617-219-2007" cellPhone:@"781-219-9997" email:@"paula@fakemail.com" picture:@"paula_gates.jpg" ];
-        [self addEmployee:@8 firstName:@"Lisa" lastName:@"Wong" title:@"Marketing Manager" managerId:@2 officePhone:@"617-219-2008" cellPhone:@"781-219-9998" email:@"lisa@fakemail.com" picture:@"lisa_wong.jpg" ];
-        [self addEmployee:@9 firstName:@"Gary" lastName:@"Donovan" title:@"Marketing Manager" managerId:@2 officePhone:@"617-219-2009" cellPhone:@"781-219-9999" email:@"gary@fakemail.com" picture:@"gary_donovan.jpg" ];
-        [self addEmployee:@10 firstName:@"Kathleen" lastName:@"Byrne" title:@"Sales Representative" managerId:@5 officePhone:@"617-219-2010" cellPhone:@"781-219-9910" email:@"kathleen@fakemail.com" picture:@"kathleen_byrne.jpg" ];
-        [self addEmployee:@11 firstName:@"Amy" lastName:@"Jones" title:@"Sales Representative" managerId:@5 officePhone:@"617-219-2011" cellPhone:@"781-219-9911" email:@"amy@fakemail.com" picture:@"amy_jones.jpg" ];
-        [self addEmployee:@12 firstName:@"Steven" lastName:@"Wells" title:@"Software Architect" managerId:@4 officePhone:@"617-219-2012" cellPhone:@"781-219-9912" email:@"steven@fakemail.com" picture:@"steven_wells.jpg" ];
-    }
 }
 
 

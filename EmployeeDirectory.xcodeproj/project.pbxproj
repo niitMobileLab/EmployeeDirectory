@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01C6B20D1CC887F10062E0C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
-		01C6B20E1CC887F10062E0C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
-		01C6B2101CC88A180062E0C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
-		01C6B2111CC88A180062E0C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
-		01C6B2151CC8CC400062E0C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C6B2141CC8CC400062E0C0 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		01C6B2171CC8D2510062E0C0 /* logo-3_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B2161CC8D2510062E0C0 /* logo-3_0.jpg */; settings = {ASSET_TAGS = (); }; };
-		01C6B21E1CC8E6AE0062E0C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B21C1CC8E6AE0062E0C0 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		01C6B21F1CC8E6AE0062E0C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B21D1CC8E6AE0062E0C0 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		01C6B2221CC8E6F50062E0C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2201CC8E6F50062E0C0 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		01C6B2231CC8E6F50062E0C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2211CC8E6F50062E0C0 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		01AC0F7E1CCCBFF100E242A8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2201CC8E6F50062E0C0 /* Bolts.framework */; };
+		01AC0F7F1CCCBFF900E242A8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2211CC8E6F50062E0C0 /* Parse.framework */; };
+		01AC0F801CCCC00900E242A8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2241CC8E9660062E0C0 /* AudioToolbox.framework */; };
+		01AC0F811CCCC01500E242A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F8763183A77E700A1390E /* CoreGraphics.framework */; };
+		01C6B20D1CC887F10062E0C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */; };
+		01C6B20E1CC887F10062E0C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */; };
+		01C6B2101CC88A180062E0C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */; };
+		01C6B2111CC88A180062E0C0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */; };
+		01C6B2151CC8CC400062E0C0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C6B2141CC8CC400062E0C0 /* LoginViewController.m */; };
+		01C6B2171CC8D2510062E0C0 /* logo-3_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B2161CC8D2510062E0C0 /* logo-3_0.jpg */; };
+		01C6B21E1CC8E6AE0062E0C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B21C1CC8E6AE0062E0C0 /* Bolts.framework */; };
+		01C6B21F1CC8E6AE0062E0C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B21D1CC8E6AE0062E0C0 /* Parse.framework */; };
+		01C6B2221CC8E6F50062E0C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2201CC8E6F50062E0C0 /* Bolts.framework */; };
+		01C6B2231CC8E6F50062E0C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2211CC8E6F50062E0C0 /* Parse.framework */; };
 		01C6B2251CC8E9660062E0C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6B2241CC8E9660062E0C0 /* AudioToolbox.framework */; };
-		01C6B2291CC8F4EA0062E0C0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C6B2281CC8F4EA0062E0C0 /* Utility.m */; settings = {ASSET_TAGS = (); }; };
-		01C6B22C1CC954BA0062E0C0 /* Logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B22A1CC954BA0062E0C0 /* Logout.png */; settings = {ASSET_TAGS = (); }; };
-		01C6B22D1CC954BA0062E0C0 /* Logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B22B1CC954BA0062E0C0 /* Logout@2x.png */; settings = {ASSET_TAGS = (); }; };
+		01C6B2291CC8F4EA0062E0C0 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C6B2281CC8F4EA0062E0C0 /* Utility.m */; };
+		01C6B22C1CC954BA0062E0C0 /* Logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B22A1CC954BA0062E0C0 /* Logout.png */; };
+		01C6B22D1CC954BA0062E0C0 /* Logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C6B22B1CC954BA0062E0C0 /* Logout@2x.png */; };
+		5073A91F91DE232A0CE01139 /* libPods-EmployeeDirectory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E512623AD3FC323AE1823 /* libPods-EmployeeDirectory.a */; };
 		D97F8762183A77E700A1390E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F8761183A77E700A1390E /* Foundation.framework */; };
 		D97F8764183A77E700A1390E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F8763183A77E700A1390E /* CoreGraphics.framework */; };
 		D97F8766183A77E700A1390E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F8765183A77E700A1390E /* UIKit.framework */; };
@@ -68,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		01C6B2131CC8CC400062E0C0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		01C6B2141CC8CC400062E0C0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		01C6B2161CC8D2510062E0C0 /* logo-3_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo-3_0.jpg"; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 		D97F87AF183A7B7700A1390E /* paula_gates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paula_gates.jpg; sourceTree = "<group>"; };
 		D97F87B0183A7B7700A1390E /* ray_moore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ray_moore.jpg; sourceTree = "<group>"; };
 		D97F87B1183A7B7700A1390E /* steven_wells.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steven_wells.jpg; sourceTree = "<group>"; };
+		DB6E512623AD3FC323AE1823 /* libPods-EmployeeDirectory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EmployeeDirectory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 				E82F119A52ED4A327D136B4F /* libPods.a in Frameworks */,
 				01C6B21E1CC8E6AE0062E0C0 /* Bolts.framework in Frameworks */,
 				01C6B2221CC8E6F50062E0C0 /* Bolts.framework in Frameworks */,
+				5073A91F91DE232A0CE01139 /* libPods-EmployeeDirectory.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,9 +154,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AC0F7E1CCCBFF100E242A8 /* Bolts.framework in Frameworks */,
 				D97F8789183A77E700A1390E /* XCTest.framework in Frameworks */,
 				D97F878C183A77E700A1390E /* CoreData.framework in Frameworks */,
 				D97F878B183A77E700A1390E /* UIKit.framework in Frameworks */,
+				01AC0F811CCCC01500E242A8 /* CoreGraphics.framework in Frameworks */,
+				01AC0F801CCCC00900E242A8 /* AudioToolbox.framework in Frameworks */,
+				01AC0F7F1CCCBFF900E242A8 /* Parse.framework in Frameworks */,
 				D97F878A183A77E700A1390E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +222,6 @@
 		D97F8755183A77E700A1390E = {
 			isa = PBXGroup;
 			children = (
-				01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */,
 				01C6B20C1CC887F10062E0C0 /* GoogleService-Info.plist */,
 				D97F8769183A77E700A1390E /* EmployeeDirectory */,
 				D97F878F183A77E700A1390E /* EmployeeDirectoryTests */,
@@ -242,6 +252,7 @@
 				D97F8767183A77E700A1390E /* CoreData.framework */,
 				D97F8788183A77E700A1390E /* XCTest.framework */,
 				666D58D0D82AD0B4728B3637 /* libPods.a */,
+				DB6E512623AD3FC323AE1823 /* libPods-EmployeeDirectory.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,6 +307,7 @@
 		D97F87A5183A7B4C00A1390E /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				01C6B20F1CC88A180062E0C0 /* Default-568h@2x.png */,
 				01C6B2161CC8D2510062E0C0 /* logo-3_0.jpg */,
 				01C6B22A1CC954BA0062E0C0 /* Logout.png */,
 				01C6B22B1CC954BA0062E0C0 /* Logout@2x.png */,
@@ -456,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmployeeDirectory/Pods-EmployeeDirectory-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		60D350CC9DE32DDD20196EAE /* Embed Pods Frameworks */ = {
@@ -471,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EmployeeDirectory/Pods-EmployeeDirectory-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		70BDF98CAC5AE534895A2196 /* Check Pods Manifest.lock */ = {
@@ -671,6 +683,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/EmployeeDirectory",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EmployeeDirectory/EmployeeDirectory-Prefix.pch";
@@ -694,6 +707,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/EmployeeDirectory",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EmployeeDirectory/EmployeeDirectory-Prefix.pch";

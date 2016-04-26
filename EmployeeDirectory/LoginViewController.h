@@ -21,6 +21,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
+-(bool)isLoginSuccessful:(UITextField*)UserName password:(UITextField*)password;
 
 @end
